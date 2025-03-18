@@ -1,16 +1,92 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <title>USB Port Locker Interface</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Material Icons (for checkmark & lock icons) -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+  </head>
+  <body>
+    <!-- Navigation Tabs -->
+    <nav class="navbar">
+      <ul>
+        <li>
+          <a href="#" data-tab="home-tab" class="active">Home</a>
+        </li>
+        <li>
+          <a href="#" data-tab="location-tab">Location</a>
+        </li>
+        <li>
+          <a href="#" data-tab="settings-tab">Settings</a>
+        </li>
+      </ul>
+    </nav>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-</head>
+    <!-- Home Tab -->
+    <section id="home-tab" class="tab-content">
+      <div class="app-container">
+        <h1>USB Port Locker</h1>
 
-<body>
-  Hello world
-  <script src="script.js"></script>
-</body>
+        <!-- Lock Icon with initial locked state -->
+        <div id="lock-icon" class="lock-icon locked">
+          <!-- We’ll switch the textContent between "lock" and "lock_open" -->
+          <span class="material-symbols-outlined">lock</span>
+        </div>
 
+        <!-- Status text (LOCKED or UNLOCKED) -->
+        <p id="status-text" class="status-text locked-status">LOCKED</p>
+
+        <!-- Fingerprint Scanner Button -->
+        <button id="scan-btn">Scan Fingerprint to Unlock</button>
+
+        <!-- Loader (spinner) hidden by default -->
+        <div id="loader" class="loader" style="display: none;"></div>
+
+        <!-- Success Checkmark icon hidden by default -->
+        <span
+          id="checkmark-icon"
+          class="material-symbols-outlined checkmark-icon"
+          style="display: none;"
+        >
+          check_circle
+        </span>
+
+        <!-- Result message (e.g., "Device unlocked.") -->
+        <p id="result-message" class="result-message"></p>
+      </div>
+    </section>
+
+    <!-- Location Tab -->
+    <section id="location-tab" class="tab-content" style="display: none;">
+      <div class="app-container">
+        <h2>Device Location</h2>
+        <p>
+          Click the button below to get your current device location (latitude &
+          longitude):
+        </p>
+        <button id="get-location-btn">Get Location</button>
+        <p class="location-data" id="location-display"></p>
+      </div>
+    </section>
+
+    <!-- Settings Tab -->
+    <section id="settings-tab" class="tab-content" style="display: none;">
+      <div class="app-container">
+        <h2>Settings</h2>
+        <p>Future expansions could include:</p>
+        <ul>
+          <li>Lock Timer / Auto-Lock</li>
+          <li>Advanced Fingerprint Management (add/remove fingerprints)</li>
+          <li>Geo-Fencing: Only unlock in certain geographic regions</li>
+          <li>Remote Lock/Unlock Commands</li>
+        </ul>
+      </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
 </html>
