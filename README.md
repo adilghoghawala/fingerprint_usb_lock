@@ -1,5 +1,5 @@
 install node.js
-open and run powershell/commandprompt as admin and type the two commands to see version numbers (make sure there are no errors)
+then once downloaded open and run powershell/commandprompt as admin and type the two commands to see version numbers (make sure there are no errors)
 -> node -v
 -> npm -v
 
