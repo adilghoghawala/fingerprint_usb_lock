@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>USB Port Locker Interface</title>
+    <title>SecureLock Interface</title>
     <link rel="stylesheet" href="styles.css" />
     <!-- Material Icons (for checkmark & lock icons) -->
     <link
@@ -14,26 +14,24 @@
     <!-- Navigation Tabs -->
     <nav class="navbar">
       <ul>
-        <li>
-          <a href="#" data-tab="home-tab" class="active">Home</a>
-        </li>
-        <li>
-          <a href="#" data-tab="location-tab">Location</a>
-        </li>
-        <li>
-          <a href="#" data-tab="settings-tab">Settings</a>
-        </li>
+        <li><a href="#" data-tab="home-tab" class="active">Home</a></li>
+        <li><a href="#" data-tab="location-tab">Location</a></li>
+        <li><a href="#" data-tab="fingerprints-tab">Fingerprints</a></li>
+        <!-- <li><a href="#" data-tab="settings-tab">Settings</a></li> -->
+        <li><a href="#" data-tab="removal-tab">Forced Removal</a></li>
+        <li><a href="#" data-tab="connections-tab">Phones</a></li>
+        <button onclick="startDriveMonitoring()">Start Monitoring</button>
+
       </ul>
     </nav>
 
     <!-- Home Tab -->
     <section id="home-tab" class="tab-content">
       <div class="app-container">
-        <h1>USB Port Locker</h1>
+        <h1>SecureLock</h1>
 
         <!-- Lock Icon with initial locked state -->
         <div id="lock-icon" class="lock-icon locked">
-          <!-- We’ll switch the textContent between "lock" and "lock_open" -->
           <span class="material-symbols-outlined">lock</span>
         </div>
 
@@ -84,6 +82,51 @@
           <li>Geo-Fencing: Only unlock in certain geographic regions</li>
           <li>Remote Lock/Unlock Commands</li>
         </ul>
+      </div>
+    </section>
+
+    <!-- Fingerprints Tab -->
+    <section id="fingerprints-tab" class="tab-content" style="display: none;">
+      <div class="app-container">
+        <h2>Manage Fingerprints</h2>
+        <p>Add up to 3 fingerprints.</p>
+        
+        <!-- Button to add a new fingerprint -->
+        <button id="add-fingerprint-btn">Add Fingerprint</button>
+        
+        <!-- A spot to list existing fingerprints with remove buttons -->
+        <div id="fingerprint-list" style="margin-top: 1rem;"></div>
+      </div>
+    </section>
+
+    <!-- Forced Removal Tab -->
+    <section id="removal-tab" class="tab-content" style="display: none;">
+      <div class="app-container">
+        <h2>Forced Removal</h2>
+        <p>
+          Click the button below to simulate a forced lock removal event. This
+          will call a PowerShell script on the server side. 
+        </p>
+        <button id="force-remove-btn">Simulate Forced Removal</button>
+        <!-- A spot to show the result from the server -->
+        <p id="removal-result" class="result-message"></p>
+      </div>
+    </section>
+
+    <!-- Connections Tab -->
+    <section id="connections-tab" class="tab-content" style="display: none;">
+      <div class="app-container">
+        <h2>Connect Phones to Lock Device</h2>
+        <p>Add or remove phones that can control or interact with the secure lock.</p>
+        
+        <!-- Button to add a new connection -->
+        <button id="add-connection-btn">Add Phone</button>
+
+        <!-- Button to scan via Web Bluetooth -->
+    <button id="scan-bluetooth-btn">Scan via Bluetooth</button>
+        
+        <!-- A spot to list existing connections with remove buttons -->
+        <div id="connection-list" style="margin-top: 1rem;"></div>
       </div>
     </section>
 

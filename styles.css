@@ -106,7 +106,7 @@ button {
   border-radius: 6px;
   cursor: pointer;
   margin-bottom: 1rem;
-  margin-top: 15px; 
+  margin-top: 15px;
 }
 button:hover {
   background-color: #5a6fd2;
@@ -153,44 +153,10 @@ button:hover {
   color: #333;
 }
 
-/* Settings section styles */
-#settings-tab {
-  padding: 20px; 
-  text-align: center; 
-}
-
-/* Style for the heading */
-#settings-tab h2 {
-  font-size: 24px; 
-  margin-bottom: 10px; 
-}
-
-/* Style for the paragraph */
-#settings-tab p {
-  font-size: 16px; 
-  margin-bottom: 15px; 
-}
-
-/* Style for the list */
-#settings-tab ul {
-  list-style-type: disc; 
-  padding-left: 20px; 
-  text-align: left;
-  line-height: 1.6;
-  margin-top: 10px; 
-}
-
-/* Style for list items */
-#settings-tab li {
-  margin-bottom: 10px; 
-}
-
-#history-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-#history-list li {
-  margin-bottom: 10px;
-  font-size: 16px;
+/* Items for fingerprints/phones (similar style) */
+.fingerprint-item,
+.phone-item {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
 }
