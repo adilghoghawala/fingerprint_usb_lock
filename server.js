@@ -28,7 +28,7 @@ app.post("/api/ForcedRemoval", (req, res) => {
 });
 
 app.post("/api/DriveMonitor", (req, res) => {
-  // path to your advanced lock script
+  // path to lock script
   const scriptPath = "C:\\Users\\name\\Desktop\\DriveMonitor.ps1";
 
   // call it with -ExecutionPolicy Bypass
