@@ -252,7 +252,7 @@ let connectedPhones = [];
 const addPhoneBtn = document.getElementById("add-phone-btn");
 const phoneListDiv = document.getElementById("phone-list");
 
-// NEW: Bluetooth scan button
+// Bluetooth scan button
 const scanBluetoothBtn = document.getElementById("scan-bluetooth-btn");
 
 // 1) Existing: Manual “Add Phone (Simulate)”
