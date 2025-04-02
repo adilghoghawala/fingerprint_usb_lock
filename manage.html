@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Fingerprint - SecureLock</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>➕ Add Fingerprint</h1>
+        <input type="text" id="newFingerprint" placeholder="Enter new fingerprint">
+        <button id="addBtn">Add Fingerprint</button>
+        <p id="message"></p>
+        <a href="index.html"> Back to Home</a>
+    </div>
+    <script>
+        document.getElementById('addBtn').onclick = () => {
+            const fp = document.getElementById('newFingerprint').value.trim();
+            fetch('/add-fingerprint', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ fingerprint: fp })
+            })
+            .then(res => res.text())
+            .then(msg => document.getElementById('message').textContent = msg)
+            .catch(err => document.getElementById('message').textContent = err);
+        };
+    </script>
+</body>
+</html>
