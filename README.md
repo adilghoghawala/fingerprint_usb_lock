@@ -1,3 +1,5 @@
+*NOTE* Make sure you use a vm or have a second admin account. Using this software can potentially lock you out of your pc.
+
 install node.js
 then once downloaded open and run powershell/commandprompt as admin and type the two commands to see version numbers (make sure there are no errors)
 -> node -v
@@ -16,10 +18,7 @@ run this command to install express a framework to make servers
 -> npm install express
 You’ll now see express added as a dependency in your package.json, and a node_modules folder created.
 
-inside the the main project folder place the server.js file into it, then create a folder named "public" and this is were you will place the css, html, and js file
-
-before running the script functions on the website make sure you go into the server.js file and change the directory to both the powershell scripts to wherever you have them located. 
-ex: const scriptPath = "C:\\Users\\name\\Desktop\\DriveMonitor.ps1";
+inside the the main project folder place the server.js, fingerprints, lockstate, DriveMonitor files into it, then create a folder named "public" and this is were you will place the css, html, script, and manage file.
 
 to run the server locally, on the command line type 
 -> cd my-node-project
