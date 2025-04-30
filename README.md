@@ -1,3 +1,6 @@
+
+<img src="fefbcaf4-6afe-42cd-9c54-c59a29f2e060.png" alt="SecureLock Logo" width="300">
+
 *NOTE* Make sure you use a vm or have a second admin account. Using this software can potentially lock you out of your pc.
 
 install node.js
